@@ -1,7 +1,7 @@
 pipeline {
     agent any
 tools{
-maven 'Meven"
+maven 'Meven'
 }
     stages {
         stage('Test') {
