@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+tools{
+maven 'Meven"
+}
+    stages {
+        stage('Test') {
+            steps {
+sh 'mv --version'
+                echo 'Hello Test'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Hello from Build'
+            }
+        }
+
+        stage('Deploy Test') {
+            steps {
+                echo 'Hello from Deploy Test'
+            }
+        }
+
+        stage('Prod') {
+            steps {
+                echo 'Hello from Prod'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'This will run ALWAYS (success or failure)'
+        }
+
+        success {
+            echo 'Pipeline completed SUCCESSFULLY 🎉'
+        }
+
+        failure {
+            echo 'Pipeline FAILED ❌'
+        }
+    }
+}
